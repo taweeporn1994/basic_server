@@ -21,11 +21,9 @@ app.get('/', (req, res) => {
     req.headers['x-forwarded-for'] || req.connection.remoteAddress
   const timestamp = new Date().toISOString()
   console.log('clientIP|timestamp :', `${clientIP}|${timestamp}`)
-  res.send(`Hello, World! Host IP : ${hostIP}`)
+  res.send(`Hello, World! Host IP|timestamp : ${hostIP}|${timestamp}`)
 })
 
 app.listen(PORT, () => {
-  const timestamp = new Date().toISOString()
   console.log(`Server is running on http://${hostIP}:${PORT}`)
-  console.log('timestamp :', timestamp)
 })
