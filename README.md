@@ -18,6 +18,31 @@ http://192.168.114.38:8080/
 
 # Linux CMD
 List port status
-    lsof -i -P -n | grep LISTEN
+    lsof 
 Check nginx
+    service nginx status
+    service nginx stop
     service nginx start
+
+
+
+   server {
+        listen 8080;
+   }
+   upstream ourservers {
+        server   192.168.10.111:8000;
+        server   192.168.10.114:8000;
+        server   192.168.10.113:8000  down;
+    }
+
+
+เครื่อง bot 2 เครื่องนี้เหมือนกัน
+http://192.168.10.111:8000/docs#/
+http://192.168.10.114:8000/docs#
+
+ทดสอบด้วยการดึง root ก็ได้
+
+
+
+
+rhn7y8hq
