@@ -1,3 +1,6 @@
+# Infrastructure
+Fontend => nginx.conf.fe
+
 # basic_server
 http://192.168.114.33:8080/
 http://192.168.114.35:8080/
@@ -23,7 +26,7 @@ Check nginx
     service nginx status
     service nginx stop
     service nginx start
-
+    service nginx restart
 
 
    server {
@@ -42,7 +45,9 @@ http://192.168.10.114:8000/docs#
 
 ทดสอบด้วยการดึง root ก็ได้
 
-
-
-
-rhn7y8hq
+     upstream backend {
+          least_conn;
+          server   192.168.10.111:8000;
+          server   192.168.10.114:8000;
+          server   192.168.10.113:8000  down;
+     }

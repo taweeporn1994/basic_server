@@ -8,8 +8,9 @@ events {
 http {
      upstream backend {
           least_conn;
-          server   192.168.10.120:5173;
-          server   192.168.10.220:5173;
+          server   192.168.10.111:8000;
+          server   192.168.10.114:8000;
+          server   192.168.10.113:8000  down;
      }
      server {
           listen 80;
