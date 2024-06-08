@@ -27,6 +27,8 @@ Check nginx
     service nginx stop
     service nginx start
     service nginx restart
+    nginx -t
+    nginx -s reload
 
 
    server {
@@ -55,3 +57,35 @@ Fontend
 http://192.168.10.120:5173/login
 http://192.168.10.220:5173/login
 http://192.168.10.190/login
+
+
+# Mac install nginx
+cp /Users/taweeporn/Desktop/Home/RTAF/GitLab_Project/basic_server/nginx.conf .
+https://www.javatpoint.com/installing-nginx-on-mac
+ - brew update  
+ - brew install nginx
+ brew services info nginx
+ brew services list
+ brew services start nginx
+ brew services stop nginx
+ nginx -s quit   
+
+
+deafult using port 8080  
+Add configs in -> /usr/local/etc/nginx/servers/
+Default config -> /usr/local/etc/nginx/nginx.conf
+Logs will be in -> /usr/local/var/log/nginx/
+Default webroot is -> /usr/local/var/www/
+Default listen address -> http://localhost:8080
+==> nginx
+Docroot is: /usr/local/var/www
+
+The default port has been set in /usr/local/etc/nginx/nginx.conf to 8080 so that
+nginx can run without sudo.
+
+nginx will load all files in /usr/local/etc/nginx/servers/.
+
+To start nginx now and restart at login:
+  brew services start nginx
+Or, if you don't want/need a background service you can just run:
+  /usr/local/opt/nginx/bin/nginx -g daemon\ off\;
