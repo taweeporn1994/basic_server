@@ -129,5 +129,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+.note
 
 sudo apt-get install -y mongodb-org=5.0.7 mongodb-org-database=5.0.7 mongodb-org-server=5.0.7 mongodb-org-shell=5.0.7 mongodb-org-mongos=5.0.7 mongodb-org-tools=5.0.7
