@@ -60,7 +60,10 @@ http://192.168.10.190/login
 
 
 # Mac install nginx
+rm -rf nginx.conf   
 cp /Users/taweeporn/Desktop/Home/RTAF/GitLab_Project/basic_server/nginx.conf .
+brew services stop nginx
+brew services start nginx
 https://www.javatpoint.com/installing-nginx-on-mac
  - brew update  
  - brew install nginx
